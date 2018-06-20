@@ -25,13 +25,13 @@ begin
 	if(rst == 1) 
 	begin
 		cnt <= cnt + 1;
-			if(cnt < visible_area)
+			if(cnt < visible_area)begin
 				Xpos<=cnt;
-				Ypos <= Ypos;
+				Ypos <= Ypos; end
 				else
 				Ypos <= Ypos + 1;
-			if(cnt > (visible_area + back_porch) & cnt < (visible_area + back_porch + sync_pulse))
-				out <= 0
+			if(cnt > (visible_area + back_porch) && cnt < (visible_area + back_porch + sync_pulse))
+				out <= 0;
 		else
 				out <= 1;
 	end

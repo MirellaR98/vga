@@ -1,5 +1,5 @@
 Analysis & Elaboration report for VGA
-Wed Jun 20 11:16:24 2018
+Wed Jun 20 13:34:42 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Wed Jun 20 11:16:24 2018           ;
+; Analysis & Elaboration Status      ; Successful - Wed Jun 20 13:34:42 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; VGA                                             ;
 ; Top-level Entity Name              ; Top_sync                                        ;
@@ -222,7 +222,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Elaboration
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Jun 20 11:16:24 2018
+    Info: Processing started: Wed Jun 20 13:34:41 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA -c VGA --analysis_and_elaboration
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file Top_sync.v
@@ -233,19 +233,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file Counter
     Info (12023): Found entity 1: Counter_sync
 Info (12021): Found 1 design units, including 1 entities, in source file Counter_tb.v
     Info (12023): Found entity 1: Counter_tb
+Warning (10275): Verilog HDL Module Instantiation warning at TOP_VGA.v(50): ignored dangling comma in List of Port Connections
+Info (12021): Found 1 design units, including 1 entities, in source file TOP_VGA.v
+    Info (12023): Found entity 1: TOP_VGA
 Info (12127): Elaborating entity "Top_sync" for the top level hierarchy
-Warning (10858): Verilog HDL warning at Top_sync.v(16): object mode used but never assigned
-Warning (10030): Net "mode.0101" at Top_sync.v(16) has no driver or initial value, using a default initial value '0'
-Warning (10034): Output port "Xpos" at Top_sync.v(9) has no driver
-Warning (10034): Output port "Ypos" at Top_sync.v(10) has no driver
+Warning (10858): Verilog HDL warning at Top_sync.v(17): object mode used but never assigned
+Warning (10030): Net "Xpos" at Top_sync.v(9) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Ypos" at Top_sync.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "mode.0101" at Top_sync.v(17) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "Counter_sync" for hierarchy "Counter_sync:DUT1"
-Warning (10034): Output port "Xpos" at Counter_sync.v(9) has no driver
-Warning (10034): Output port "Ypos" at Counter_sync.v(10) has no driver
+Warning (10230): Verilog HDL assignment warning at Counter_sync.v(29): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at Counter_sync.v(32): truncated value with size 32 to match size of target (12)
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info: Quartus II 64-Bit Analysis & Elaboration was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 926 megabytes
-    Info: Processing ended: Wed Jun 20 11:16:24 2018
-    Info: Elapsed time: 00:00:00
+Info: Quartus II 64-Bit Analysis & Elaboration was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 924 megabytes
+    Info: Processing ended: Wed Jun 20 13:34:42 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -8,23 +8,28 @@ module TOP_VGA(
 	output Vsync,
 	output Hsync_neg,
 	output Vsync_neg,
+	output Disp_activ,
 	input [7:0] R_i,
 	input [7:0] G_i,
 	input [7:0] B_i,
 	input clk,
 	input rst,
-	input [3:0] mode,
+	input [3:0] mode
 
 );
 
-assign [7:0] WR,WG,WB;
-assign [11:0] Wxpos , Wypos;
-assign [3:0] wmode;
+wire [7:0] WR;
+wire [7:0] WG;
+wire [7:0] WB;
+wire [11:0] Wxpos;
+wire [11:0] Wypos;
+wire [3:0] wmode;
+wire wdisp;
 
 assign Hsync = ~Hsync_neg;
 assign Vsync = ~Vsync_neg;
 
-
+	
 
 
 Counter DUT2(
@@ -40,6 +45,7 @@ Top_sync DUT3(
 	.clk(clk),
 	.Xpos(Wxpos),
 	.Ypos(Wypos),
+	.Disp_activ(wdisp),
 	.outf(),
 );
 
@@ -58,7 +64,7 @@ TOP_VGA DUT4(
 	.Xpos(Wxpos),
 	.Ypos(Wypos),
 	.mode(wmode),
-	.disp_activ(),
+	.Disp_activ(wdisp),
 	.Hsync(),
 	.Vsync(),
 	.Hsync_neg(),

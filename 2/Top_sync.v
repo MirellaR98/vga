@@ -8,12 +8,14 @@ module Top_sync(
 	input [11:0] whole_line,
 	output reg [11:0] Xpos,
 	output reg [11:0] Ypos, 
-	output out_f
+	output out_f,
+	output reg Disp_active
 );
 
 	wire wout;
 	reg [11:0] visible_area1 , visible_area2, front_porch1 , front_porch2 , sync_pulse1  , sync_pulse2 , back_porch1, back_porch2 , whole_line1,whole_line2;
 	reg [3:0] mode;
+	
 	
 	
 	Counter_sync DUT1(
@@ -37,6 +39,14 @@ module Top_sync(
 		.out(out_f),
 		.whole_line(whole_line2)
 	);
+	
+	always@(*)
+	begin
+	if(Xpos < visible_area1 && Ypos > visible_area2)
+		Disp_active = 1;
+		else
+		Disp_active = 0;
+	end
 	
 	always@(*)begin
 	case (mode) 
