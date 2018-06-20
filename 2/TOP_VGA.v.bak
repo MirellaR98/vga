@@ -1,0 +1,38 @@
+module TOP_VGA(
+	output [7:0] R_o,
+	output [7:0] G_o,
+	output [7:0] B_o,
+	input [7:0] R_i,
+	input [7:0] G_i,
+	input [7:0] B_i,
+	input clk,
+	input rst,
+	input [3:0] mode,
+
+);
+
+assign [7:0] WR,WG,WB;
+
+
+
+
+
+
+
+
+
+
+
+TOP_VGA DUT(
+	.R_i(WR),
+	.G_i(WG),
+	.B_i(WB),
+	.R_o(WR),
+	.G_o(WG),
+	.B_o(WB),
+	.clk(clk),
+	.rst(rst)
+
+
+
+);
